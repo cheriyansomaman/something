@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: Simple App
+  r2dbc:
+    url: r2dbc:postgresql://127.0.0.1:5432/checkgen
+    username: root
+    password: root
+  datasource:
+    #url: jdbc:postgresql://db:5432/checkgen
+    #url: jdbc:postgresql://database:5432/checkgen
+    #url: jdbc:postgresql://172.17.0.2:5432/checkgen
+    #url: jdbc:postgresql://host.docker.internal:5432/checkgen
+    url: jdbc:postgresql://127.0.0.1:5432/checkgen
+    driverClassName: org.postgresql.Driver
+    username: root
+    password: root
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+  flyway:
+    url: jdbc:postgresql://127.0.0.1:5432/checkgen
+    password: root
+    locations:
+      - classpath:db/flyway/migration
